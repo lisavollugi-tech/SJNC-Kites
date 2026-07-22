@@ -1,8 +1,11 @@
-export const firebaseConfig = {
-  apiKey: "YOUR ACTUAL API KEY",
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyD48UYccpepGcEYd6DA4KCAdNnPqXHoySI",
   authDomain: "sjnc-kites.firebaseapp.com",
   projectId: "sjnc-kites",
   storageBucket: "sjnc-kites.firebasestorage.app",
   messagingSenderId: "159366886364",
-  appId: "YOUR COMPLETE APP ID"
+  appId: "1:159366886364:web:e6f52faac65c5bc135d519",
+  measurementId: "G-G7W2QGQRQC"
 };
