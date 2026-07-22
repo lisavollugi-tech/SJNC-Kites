@@ -1,0 +1,32 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Simple team-use rules:
+    // Anyone with the web address can view, add and remove absence entries.
+    // For stronger protection later, add Firebase Authentication.
+    match /seasons/spring-2026/absences/{absenceId} {
+      allow read: if true;
+
+      allow create: if
+        request.resource.data.keys().hasOnly([
+          'roundId',
+          'childName',
+          'childNameLower',
+          'parentName',
+          'createdAt'
+        ])
+        && request.resource.data.roundId is string
+        && request.resource.data.childName is string
+        && request.resource.data.childName.size() > 0
+        && request.resource.data.childName.size() <= 40
+        && request.resource.data.childNameLower is string
+        && request.resource.data.parentName is string
+        && request.resource.data.parentName.size() <= 40;
+
+      allow delete: if true;
+      allow update: if false;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "SJNC Kites Absence Planner",
+  "short_name": "Kites Absences",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07172f",
+  "theme_color": "#07172f",
+  "description": "Shared absence planner for SJNC Kites Spring Season 2026."
+}
